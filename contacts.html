@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=EB+Garamond:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script src="js/main.js"></script>
+    <title>Juliet</title>
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="container head">
+            <div class="head_wrapper">
+                <div class="desktop">
+                    <div class="logo start">
+                        <div class="logotype">
+                            <p class="logo_text">
+                                Juliet
+                            </p>
+                        </div>
+                        <div class="logofig">
+                        </div>          
+                    </div>      
+                    <div class="menu" id="menu">
+                        <ul class="list">
+                            <li class="list_item">
+                                <a href="index.html" class="item">
+                                    Home
+                                </a>
+                            </li>   
+                            <li class="list_item">
+                                <p class="line">
+                                    |
+                                </p>        
+                            </li>           
+                            <li class="list_item">
+                                <a href="about.html" class="item">
+                                    About
+                                </a>
+                            </li>           
+                            <li class="list_item">
+                                <p class="line">
+                                    |
+                                </p>
+                            </li>
+                            <li class="list_item gallery">
+                                <div class="item_gallery">
+                                    <a href="#" class="item">
+                                        Gallery
+                                    </a>
+                                </div>
+                                <ul class="dropmenu">
+                                    <li class="drop_item">
+                                        <a href="mobile.html" class="drop">
+                                            Mobile
+                                        </a>
+                                    </li>
+                                    <li class="drop_item">
+                                        <a href="camera.html" class="drop">
+                                            Camera
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="list_item">
+                                <p class="line">
+                                    |
+                                </p>
+                            </li>           
+                            <li class="list_item">
+                                <a href="contacts.html" class="item current">
+                                    Contacts
+                                </a>
+                            </li>   
+                        </ul>
+                    </div>  
+                    <div class="logo end">
+                        <div class="logotype">
+                            <p class="logo_text">
+                                Juliet
+                            </p>
+                        </div>
+                        <div class="logofig">
+                        </div>  
+                    </div>
+                    <div class="menu_btn">
+                        <a onclick="Menu()" class="menu_a">
+                            <img src="images/menu.svg" alt="menu" class="menu_img" id="menu_img">
+                        </a>
+                    </div>
+                </div>
+                <div class="mob_menu" id="mob_menu">
+                    <ul class="mob_list">
+                        <li class="mob_list_item">
+                            <a href="index.html" class="item">
+                                Home
+                            </a>
+                        </li>               
+                        <li class="mob_list_item">
+                            <a href="about.html" class="item">
+                                About
+                            </a>
+                        </li>                       
+                        <li class="mob_list_item">
+                            <a href="contacts.html" class="item current">
+                                Contacts
+                            </a>
+                        </li>   
+                        <li class="mob_list_item gallery">
+                            <div class="gallery_dm">
+                                <div class="item_gallery">
+                                    <a onclick="DropMenu()" class="item">
+                                        Gallery
+                                    </a>
+                                </div>                  
+                                <div class="dm_img">
+                                    <a onclick="DropMenu()" class="dm_a">
+                                        <img src="images/arrow.svg" alt="arrow" class="arrow" id="dm_arrow">
+                                    </a>        
+                                </div>
+                            </div>
+                            <div class="mob_dropmenu" id="mob_dropmenu">
+                                <ul class="mob_dm">
+                                    <li class="mob_drop_item">
+                                        <a href="mobile.html" class="mob_drop" id="mob_drop">
+                                            Mobile
+                                        </a>
+                                    </li>
+                                    <li class="mob_drop_item">
+                                        <a href="camera.html" class="mob_drop" id="mob_drop">
+                                            Camera
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>  
+        </div>      
+    </header>
+    <section class="info_wrapper" id="info">
+        <div class="container contact">
+            <div class="left">
+                <div class="cont_me">
+                    <a href="https://www.instagram.com/ytsmm/" class="social" target="_blank">
+                    <img src="images/flower.jpeg" alt="me" class="me">
+                    </a> 
+                </div>                  
+                <div class="location">
+                    <div class="map">
+                        <p class="place">
+                            You can find me here
+                        </p>
+                    </div>
+                    <div class="im_map">
+                        <a href="https://www.google.com/maps/place/%D0%AE%D0%A3%D1%80%D0%93%D0%A3+3%D0%91+%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81/@55.1567806,61.3776839,15z/data=!4m9!1m2!2m1!1z0Y7Rg9GA0LPRgw!3m5!1s0x43c592c083abaccf:0x210093695fdfafa7!8m2!3d55.1590765!4d61.36494!15sCgrRjtGD0YDQs9GDkgEKdW5pdmVyc2l0eQ?hl=ru" class="a_map" target="_blank">
+                            <img src="images/placeholder.svg" id="map">
+                        </a>
+                    </div>
+                </div>    
+            </div>
+            <div class="right">
+                <h1 class="git">
+                    get in touch
+                </h1>
+                <form action="send.php" method="POST" target="_blank">
+                    <p class="form_text">
+                        Name
+                    </p>
+                    <input type="text" name="name"required class="form_cell">
+                    <p class="form_text">
+                        E-mail
+                    </p>
+                    <input type="email" name="email" required class="form_cell">
+                    <p class="form_text">
+                        Message
+                    </p>
+                    <textarea name="message" required class="form_cell mes"></textarea>
+                </form>
+                <div class="form_button">
+                    <input type="submit" class="btn form_btn" value="submit"></button>
+                </div>          
+            </div>
+        </div>
+        <div class="mob_down">
+                <div class="img_cont">
+                    <img src="images/det0.jpeg" alt="guys" class="img_cont">
+                </div>
+                <div class="location">
+                    <div class="map">
+                        <p class="place">
+                            You can find me here
+                        </p>
+                    </div>
+                    <div class="im_map">
+                        <a href="https://www.google.com/maps/place/%D0%AE%D0%A3%D1%80%D0%93%D0%A3+3%D0%91+%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81/@55.1567806,61.3776839,15z/data=!4m9!1m2!2m1!1z0Y7Rg9GA0LPRgw!3m5!1s0x43c592c083abaccf:0x210093695fdfafa7!8m2!3d55.1590765!4d61.36494!15sCgrRjtGD0YDQs9GDkgEKdW5pdmVyc2l0eQ?hl=ru" class="a_map" target="_blank">
+                            <img src="images/placeholder.svg" id="map">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+    </section>
+    <footer class ="footer">
+        <div class="container">
+            <p class="down">
+                Follow me on social networks
+            </p>
+            <div class="socials">
+                <a href="https://www.instagram.com/ytsmm/" class="social" target="_blank">
+                    <img src="images/ig.svg" alt="ig" id="sn">
+                </a>
+                <a href="https://www.tiktok.com/@ytsmm" class="social" target="_blank">
+                    <img src="images/tt.svg" alt="tt" id="sn">
+                </a>
+                <a href="https://vk.com/ytsmm" class="social" target="_blank">
+                    <img src="images/vk.svg" alt="vk" id="sn">
+                </a>
+                
+            </div>
+        </div>  
+    </footer>
