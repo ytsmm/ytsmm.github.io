@@ -16,16 +16,27 @@
                         <img src="img/logo.svg" alt="Aveji logo">
                     </div>
                     <ul class="menu desktop">
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#projects">Проекты</a></li>
-                        <li><a href="#header">Материалы</a></li>
-                        <li><a href="#responses">Отзывы</a></li>
+                        <li><a href="#about" class="menu_link">О нас</a></li>
+                        <li><a href="#projects" class="menu_link">Проекты</a></li>
+                        <li><a href="#header" class="menu_link">Материалы</a></li>
+                        <li><a href="#responses" class="menu_link">Отзывы</a></li>
                     </ul>
                     <div class="contact desktop">
                         +7 999 999 99 99
                     </div>
                     <div class="burger mobile">
-                        <img src="img/burger.svg" alt="Menu">
+                        <button onclick="burgerMenu()" class="burger_btn"><img src="img/burger.svg" alt="Menu"></button>               
+                        <div class="burger_nav mobile hidden">
+                            <button onclick="burgerMenu()" class="burger_btn"><img src="img/close.svg" alt="Menu"></button>
+                            <ul class="burger_menu">
+                                <li><a href="#about" class="menu_link">О нас</a></li>
+                                <li><a href="#projects" class="menu_link">Проекты</a></li>
+                                <li><a href="#header" class="menu_link">Материалы</a></li>
+                                <li><a href="#responses" class="menu_link">Отзывы</a></li>
+                                <li><a href="#header" class="menu_link">Вконтакте</a></li>
+                                <li><a href="#header" class="menu_link">Телеграм</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
             </div>      
@@ -234,13 +245,13 @@
         <div class="container">
             <nav>
                 <div class="nav_links">
-                    <a href="#header">ВКОНТАКТЕ</a>
-                    <a href="#header">ТЕЛЕГРАМ</a>
+                    <a href="#header" class="menu_link">ВКОНТАКТЕ</a>
+                    <a href="#header" class="menu_link">ТЕЛЕГРАМ</a>
                 </div>
                 <div class="nav_rules">
-                    <a href="#header">Политика конфиденциальности</a>
+                    <a href="#header" class="menu_link">Политика конфиденциальности</a>
                     <span class="desktop">/</span>
-                    <a href="#header">Оплата и доставка</a>
+                    <a href="#header" class="menu_link">Оплата и доставка</a>
                 </div>
                 <div class="nav_rights">
                     &#169; 2023 AVEJI<br>ВСЕ ПРАВА ЗАЩИЩЕНЫ
@@ -248,5 +259,11 @@
             </nav>
         </div>
     </footer>
+    <script>
+        const mobileMenu = document.querySelector('.burger_nav');
+        function burgerMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>

@@ -55,10 +55,31 @@ img {
 a {
   text-decoration: none;
   color: #212529;
+  position: relative;
 }
 
-a:hover {
-  text-decoration: underline;
+.menu_link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #000;
+}
+
+.menu_link:hover:before {
+  width: 100%;
+}
+
+.menu_link::before {
+  -webkit-transition: width 0.2s;
+  transition: width 0.2s;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
 }
 
 .container {
@@ -177,6 +198,45 @@ header nav li:not(:last-child) {
     margin-bottom: 48px;
     margin: 12px 0 32px;
   }
+}
+
+.burger_nav {
+  position: absolute;
+  z-index: 2;
+  background: #ECECEC;
+  height: 100%;
+  top: 0;
+  left: 60vw;
+  width: 40vw;
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 20px;
+}
+
+.burger_btn {
+  background: none;
+  border: none;
+  float: right;
+  width: 30px;
+  margin-bottom: 40px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.burger_btn img {
+  color: black;
+}
+
+.burger_nav li:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 main, .about, .steps, .projects, .responses, .contact {
