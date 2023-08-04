@@ -136,6 +136,10 @@ header nav .logo {
           flex-grow: 4;
 }
 
+header nav .logo img {
+  width: 40px;
+}
+
 @media (min-width: 1024px) {
   header nav .logo img {
     width: 70px;
@@ -212,14 +216,14 @@ main p {
   }
 }
 
-main a {
+main .main_btn {
   text-decoration: underline;
   margin-bottom: 26px;
   font-size: 18px;
 }
 
 @media (min-width: 1024px) {
-  main a {
+  main .main_btn {
     margin-bottom: 0;
   }
 }
