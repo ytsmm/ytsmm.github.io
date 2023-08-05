@@ -232,10 +232,20 @@
                     <h2>Хотите заказать проект?</h2>
                     <p>Оставьте заявку, и мы вам перезвоним</p>
                     <form action="#">
-                        <input type="text" placeholder="Имя"><br>
-                        <input type="email" placeholder="E-mail"><br>
-                        <input type="phone" placeholder="Телефон"><br>
-                        <button type="submit">Отправить заявку</button>
+                        <div class="area_text">
+                            <label for="name" class="contact__label">Имя</label><br>
+                            <input type="text" class="contact__input" name="name"><br>
+                        </div>
+                        <div class="area_text">
+                            <label for="email" class="contact__label">E-mail</label><br>
+                            <input type="email" class="contact__input" name="email"><br>
+                        </div>
+                        <div class="area_text">
+                            <label for="phone" class="contact__label">Телефон</label><br>
+                            <input type="phone" class="contact__input" name="phone"><br>
+                        </div>
+                        
+                        <button type="submit" class="contact__btn">Отправить заявку</button>
                     </form>
                 </div>             
             </div>
@@ -259,6 +269,7 @@
             </nav>
         </div>
     </footer>
+
     <script>
         function burgerMenu() {
             let menu = document.querySelector('.burger-menu');
@@ -293,10 +304,25 @@
         }
 
         burgerMenu();
-        // const mobileMenu = document.querySelector('.burger_nav');
-        // function burgerMenu() {
-        //     mobileMenu.classList.toggle('hidden');
-        // }
+
+        formInputs = document.querySelectorAll('.contact__input');
+        formLabels = document.querySelectorAll('.contact__label');
+        formInputs.forEach(el => el.addEventListener('click', () => { 
+            el.parentNode.querySelector('.contact__label').classList.add('labelUp');
+        }));
+
+        window.addEventListener('click', e => {
+            const t = e.target;
+            if (!t.classList.contains('contact__input')) {
+                formLabels.forEach(el => {
+                    console.log(el);
+                    if (el.classList.contains('labelUp')) {
+                        el.classList.remove('labelUp');
+                    }
+                })
+            }
+        });
+
     </script>
 </body>
 </html>
