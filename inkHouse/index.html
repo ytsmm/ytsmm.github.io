@@ -31,8 +31,15 @@
                     <div class="header__menu">
                         <div class="container">
                             <nav class="header__nav">
-                                <button>Menu</button>
-                                <button>Cart</button>
+                                <button class="header__btn">
+                                    <span class="burger-menu_lines"></span>
+                                </button>
+                                <nav class="burger-menu_nav">
+                                    <a href="#catalog" class="header__link">Репродукции</a>
+                                    <a href="#promo" class="header__link">Новинки</a>
+                                    <a href="#team" class="header__link">О нас</a>
+                                </nav>
+                                <a href="#" class="header__link"><img src="img/cart.svg" alt="cart"></a>
                             </nav>
                         </div>
                     </div>  
@@ -51,19 +58,19 @@
                     
                 </div>
             </main>
-            <div class="catalog">
+            <div class="catalog" id="catalog">
                 <div class="container">
                     <div class="catalog__top">
                         <h2 class="catalog__heading">Репродукции</h2>
                         <div class="catalog__options">
-                            <button class="catalog__btn">Франция</button>
+                            <button class="catalog__btn catalog__btn_active">Франция</button>
                             <button class="catalog__btn">Германия</button>
                             <button class="catalog__btn">Англия</button>
                         </div>
                     </div>
                     <div class="catalog__bottom">
                         <div class="catalog__item">
-                            <img src="img/art1.jpg" alt="art" class="catalog__item-img">      
+                            <img src="img/france/art1.jpg" alt="art" class="catalog__item-img">      
                             <p class="catalog__item-author">Марсель Руссо</p>
                             <h3 class="catalog__item-name">Охота Амура</h3>
                             <p class="catalog__item-details">Холст, масло (50х80)</p>
@@ -71,7 +78,7 @@
                             <button class="catalog__item-btn">В корзину</button>
                         </div>
                         <div class="catalog__item">
-                            <img src="img/art2.jpg" alt="art" class="catalog__item-img">     
+                            <img src="img/france/art2.jpg" alt="art" class="catalog__item-img">     
                             <p class="catalog__item-author">Анри Селин</p>
                             <h3 class="catalog__item-name">Дама с собачкой</h3>
                             <p class="catalog__item-details">Акрил, бумага (50х80) </p>
@@ -79,7 +86,7 @@
                             <button class="catalog__item-btn">В корзину</button>
                         </div>
                         <div class="catalog__item">
-                            <img src="img/art3.jpg" alt="art" class="catalog__item-img">                       
+                            <img src="img/france/art3.jpg" alt="art" class="catalog__item-img">                       
                             <p class="catalog__item-author">Франсуа Дюпон</p>
                             <h3 class="catalog__item-name">Процедура</h3>
                             <p class="catalog__item-details">Цветная литография (40х60) </p>
@@ -87,7 +94,7 @@
                             <button class="catalog__item-btn">В корзину</button>
                         </div>
                         <div class="catalog__item">
-                            <img src="img/art4.jpg" alt="art" class="catalog__item-img">                       
+                            <img src="img/france/art4.jpg" alt="art" class="catalog__item-img">                       
                             <p class="catalog__item-author">Луи Детуш</p>
                             <h3 class="catalog__item-name">Роза</h3>
                             <p class="catalog__item-details">Бумага, акрил (50х80) </p>
@@ -95,7 +102,7 @@
                             <button class="catalog__item-btn">В корзину</button>
                         </div>
                         <div class="catalog__item">
-                            <img src="img/art5.jpg" alt="art" class="catalog__item-img">                       
+                            <img src="img/france/art5.jpg" alt="art" class="catalog__item-img">                       
                             <p class="catalog__item-author">Франсуа Дюпон</p>
                             <h3 class="catalog__item-name">Птичья трапеза</h3>
                             <p class="catalog__item-details">Цветная литография (40х60) </p>
@@ -103,7 +110,7 @@
                             <button class="catalog__item-btn">В корзину</button>
                         </div>
                         <div class="catalog__item">
-                            <img src="img/art6.jpg" alt="art" class="catalog__item-img">                       
+                            <img src="img/france/art6.jpg" alt="art" class="catalog__item-img">                       
                             <p class="catalog__item-author">Пьер Моранж</p>
                             <h3 class="catalog__item-name">Пейзаж с рыбой</h3>
                             <p class="catalog__item-details">Цветная литография (40х60) </p>
@@ -113,7 +120,7 @@
                     </div>
                 </div>
             </div>
-            <div class="promo">
+            <div class="promo" id="promo">
                 <div class="promo__bg">
                     <div class="container">
                         <div class="promo__top">
@@ -126,7 +133,7 @@
                     </div>
                 </div>             
             </div>
-            <div class="team">
+            <div class="team" id="team">
                 <div class="container">
                     <div class="team__top">
                         <img src="img/team.svg" alt="painting" class="team__img">                  
@@ -186,5 +193,27 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        const body = document.querySelector('body');
+        const menuBtn = document.querySelector('.header__btn');
+        const menu = document.querySelector('.burger-menu_nav');
+        const menuLinks = document.querySelectorAll('.burger-menu_nav .header__link');
+
+        menuBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                toggleMenu();
+            });
+
+        menuLinks.forEach(el => el.addEventListener('click', e => {
+            toggleMenu();
+        }));
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('burger-menu_active');
+            menu.classList.toggle('burger-menu_active');
+            body.classList.toggle('stop-scroll');
+        }
+    </script>
 </body>
 </html>
