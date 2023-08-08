@@ -250,8 +250,6 @@ main {
 }
 
 .catalog__options {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 20px;
   overflow-x: auto;
@@ -264,7 +262,7 @@ main {
   padding: 10px 20px;
   border-radius: 20px;
   background: #D4E8D9;
-  border: none;
+  border: 2px solid #D4E8D9;
   transition-duration: 0.3s;
   cursor: pointer;
 }
@@ -276,6 +274,7 @@ main {
 .catalog__btn:hover {
   color: #F4F6F5;
   background: #598D66;
+  border: 2px solid #598D66;
 }
 
 .catalog__bottom {

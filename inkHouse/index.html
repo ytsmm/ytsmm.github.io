@@ -64,9 +64,9 @@
                     <div class="catalog__top">
                         <h2 class="catalog__heading">Репродукции</h2>
                         <div class="catalog__options">
-                            <button class="catalog__btn catalog__btn_active">Франция</button>
-                            <button class="catalog__btn">Германия</button>
-                            <button class="catalog__btn">Англия</button>
+                            <button class="catalog__btn catalog__btn_active" data-country="france">Франция</button>
+                            <button class="catalog__btn" data-country="germany">Германия</button>
+                            <button class="catalog__btn" data-country="england">Англия</button>
                         </div>
                     </div>
                     <div class="catalog__bottom">
@@ -201,10 +201,10 @@
         const menu = document.querySelector('.burger-menu_nav');
         const menuLinks = document.querySelectorAll('.burger-menu_nav .header__link');
 
-        menuBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                toggleMenu();
-            });
+        menuBtn.addEventListener('click', e => {
+            e.preventDefault();
+            toggleMenu();
+        });
 
         menuLinks.forEach(el => el.addEventListener('click', e => {
             toggleMenu();
@@ -214,6 +214,41 @@
             menuBtn.classList.toggle('burger-menu_active');
             menu.classList.toggle('burger-menu_active');
             body.classList.toggle('stop-scroll');
+        }
+
+        const catalogBtns = document.querySelectorAll('.catalog__btn');      
+        const catalogItems = document.querySelectorAll('.catalog__item');
+
+        catalogBtns.forEach(el => el.addEventListener('click', e => {
+            e.preventDefault();
+            activeBtn(e);
+        }));
+
+        function activeBtn(e) {
+            if (!e.target.classList.contains('catalog__btn_active')) {
+                e.target.classList.add('catalog__btn_active');
+            }
+            catalogBtns.forEach(el => {
+                if (el !== e.target && el.classList.contains('catalog__btn_active')) {
+                    el.classList.remove('catalog__btn_active');
+                }
+            })
+
+            let country = e.target.dataset.country;
+            catalogItems.forEach(el => {
+                fetch("catalog.json")
+                    .then(text => text.json())
+                    .then(data => {
+                        for (let item of data[country]) {
+                            let art = catalogItems[data[country].indexOf(item)];
+                            art.querySelector('.catalog__item-img').src = item.img;
+                            art.querySelector('.catalog__item-author').textContent = item.author;
+                            art.querySelector('.catalog__item-name').textContent = item.name;
+                            art.querySelector('.catalog__item-price').textContent = item.price;
+                            art.querySelector('.catalog__item-details').textContent = item.details;
+                        }
+                });
+            });
         }
     </script>
 </body>
