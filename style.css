@@ -106,13 +106,11 @@ header nav {
 .nav_link a {
   text-decoration: none;
   color: #000;
+  transition-duration: 0.3s;
 }
 
 .nav_link a:hover {
-  background: linear-gradient(180deg, #63842D 23.44%, rgba(0, 0, 0, 0.00) 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #598D66;
 }
 
 .about {
@@ -155,24 +153,28 @@ header nav {
     color: black;
     margin-bottom: 10px;
     display: block;
+    transition-duration: 0.3s;
 }
 
 .works_link:hover {
-  background: linear-gradient(180deg, #63842D 23.44%, #FFF 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #598D66;
 }
 
-.works_img {
+.works__img {
   height: 90%;
   max-height: 600px;
+  overflow: hidden;
 }
 
-.works_img img {
+.works__img img {
   width: 100%;
   object-fit: cover;
   height: 100%;
+  transition-duration: 0.3s;
+}
+
+.works__img img:hover {
+  transform: scale(1.1);
 }
 
 footer {
@@ -180,8 +182,12 @@ footer {
   color: #fff;
 }
 
-footer nav {
+.footer__nav {
   padding: 24px 0;
+}
+
+.footer__link {
+  display: block;
 }
 
 .contacts_item:first-child {
@@ -190,21 +196,18 @@ footer nav {
 
 .contacts_item a {
   color: #fff;
+  transition-duration: 0.3s;
 }
 
 .contacts_item a:hover {
-  background: linear-gradient(180deg, #63842D 23.44%, #FFF 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #598D66;
 }
 
 @media (min-width: 1024px) {
-  footer nav {
+  .footer__nav {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    flex-direction: row;
+    align-items: center;
   }
 
   .contacts_item:first-child {
