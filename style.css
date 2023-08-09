@@ -161,6 +161,7 @@ header nav {
 }
 
 .works__img {
+  display: block;
   height: 90%;
   max-height: 600px;
   overflow: hidden;
