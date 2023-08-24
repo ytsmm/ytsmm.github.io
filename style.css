@@ -139,7 +139,7 @@ header nav {
 @media (min-width: 1024px) {
   .works {
     display: grid;
-    gap: 30px;
+    gap: 40px;
     grid-template-columns: repeat(3, 1fr);
   }
   .about h1 {
@@ -147,6 +147,13 @@ header nav {
     margin-bottom: 16px;
   }
 }
+
+@media (min-width: 1200px) {
+  .works {
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
 .works_link {
     text-decoration: none;
