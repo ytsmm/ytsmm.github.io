@@ -138,17 +138,24 @@ header nav {
   gap: 30px;
 }
 
+@media (min-width: 700px) {
+  .works {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (min-width: 1024px) {
   .works {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
   }
   .about h1 {
     font-size: 64px;
     margin-bottom: 16px;
   }
 }
+
+
 
 .works_link {
     text-decoration: none;
