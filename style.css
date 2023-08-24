@@ -139,7 +139,7 @@ header nav {
 @media (min-width: 1024px) {
   .works {
     display: grid;
-    gap: 40px;
+    gap: 30px;
     grid-template-columns: repeat(3, 1fr);
   }
   .about h1 {
@@ -147,13 +147,6 @@ header nav {
     margin-bottom: 16px;
   }
 }
-
-@media (min-width: 1200px) {
-  .works {
-    display: grid;
-    gap: 60px;
-    grid-template-columns: repeat(3, 1fr);
-  }
 
 .works_link {
     text-decoration: none;
@@ -167,21 +160,21 @@ header nav {
   color: #598D66;
 }
 
-.works__img {
+.works__link-img {
   display: block;
   height: 90%;
   max-height: 600px;
   overflow: hidden;
 }
 
-.works__img img {
+.works__img {
   width: 100%;
   object-fit: cover;
   height: 100%;
   transition-duration: 0.3s;
 }
 
-.works__img img:hover {
+.works__img:hover {
   transform: scale(1.1);
 }
 
