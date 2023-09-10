@@ -2,41 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Интернет-магазин</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="app">
-    <header>
-        <div class="logo">E-shop</div>
-        <div class="cart">
-            <search></search>
-            <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
-            <cart 
-                :cart-items="cartItems" 
-                :img="imgCart" 
-                :visibility="showCart" 
-                @remove-product="removeProduct" 
+    <div id="app" class="wrapper">
+        <div class="top">
+            <header class="header">
+                <div class="container">
+                    <div class="leftHeader">
+                        <img class="logoIcon" src="images/logo.png" alt="logo">
+                        <search></search>
+                    </div>
+                    <div class="rightHeader">
+                        <img class="menuIcon" src="images/menu.png" alt="menu">
+                        <img class="userIcon" src="images/user.png" alt="user">
+                        <div class="cartIconWrap">
+                            <img class="cartIcon" src="images/cart.png" alt="cart"  @click="showCart = !showCart">
+                            <span class="cartIcon__span">{{itemsQuantity}}</span>
+                            <cart 
+                                :cart-items="cartItems" 
+                                :visibility="showCart" 
+                                @remove-product="removeProduct" 
+                                @add-product="addProduct">
+                            </cart>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <brand></brand>
+            <offer></offer>
+            <products
+                :products="filtered" 
                 @add-product="addProduct">
-            </cart>
+            </products>
+            <service></service>
+            <subscribe></subscribe>
+            <footer-comp></footer-comp>
         </div>
-    </header>
-    <main>
-        <error :error="error"></error>
-        <products 
-            :products="filtered" 
-            :img="imgProduct" 
-            @add-product="addProduct">
-        </products>
-    </main>
-</div>
-    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+        
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/ProductComponent.js"></script>
-    <script src="js/CartComponent.js"></script>
-    <script src="js/SearchComponent.js"></script>
-    <script src="js/ErrorComponent.js"></script>
+    <script src="js/SearchComp.js"></script>
+    <script src="js/CartComp.js"></script>
+    <script src="js/BrandComp.js"></script>
+    <script src="js/OfferComp.js"></script>
+    <script src="js/ProductsComp.js"></script>
+    <script src="js/ServiceComp.js"></script>
+    <script src="js/SubscribeComp.js"></script>
+    <script src="js/FooterComp.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
