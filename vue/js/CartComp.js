@@ -15,7 +15,6 @@ Vue.component('cart-item', {
     <div class="cart-item">
                     <div class="product-bio">
                         <img width=100 :src="cartItem.imgProduct" alt="Some img">
-                        
                     </div>
                     <div class="right-block">
                         <div class="product-title">{{ cartItem.product_name }}</div>
