@@ -37,6 +37,10 @@ body {
   height: 74px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+  border-bottom: 1px solid #E8E8E8;
 }
 
 .header .container {
@@ -70,6 +74,12 @@ body {
           align-items: center;
 }
 
+@media (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
 .userIcon {
   display: none;
 }
@@ -78,6 +88,11 @@ body {
   .userIcon {
     display: inline;
   }
+}
+
+.searchIcon {
+  font-size: 30px;
+  color: #E8E8E8;
 }
 
 .searchForm {
@@ -138,27 +153,52 @@ body {
 
 .userIcon {
   margin-left: 25px;
+  font-size: 30px;
+  color: #E8E8E8;
   cursor: pointer;
 }
 
 .menuIcon {
   cursor: pointer;
-}
-
-.cartIcon {
-  margin-left: 42px;
-  cursor: pointer;
-}
-
-.cartIconWrap {
-  display: none;
+  font-size: 30px;
+  color: #E8E8E8;
 }
 
 @media (min-width: 768px) {
-  .cartIconWrap {
-    display: inline;
-    position: relative;
+  .menuIcon {
+    display: none;
   }
+}
+
+.cartIcon {
+  font-size: 30px;
+  color: #E8E8E8;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cartIcon {
+    margin-left: 42px;
+  }
+}
+
+.searchIcon, .cartIcon, .userIcon, .menuIcon {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.searchIcon:hover, .cartIcon:hover, .userIcon:hover, .menuIcon:hover {
+  color: #F16D7F;
+}
+
+.closeIcon {
+  font-size: 30px;
+  color: #E8E8E8;
+}
+
+.cartIconWrap {
+  display: inline;
+  position: relative;
 }
 
 .cartIcon__span {
@@ -249,6 +289,7 @@ body {
 }
 
 .brand {
+  margin-top: 74px;
   background: #F1E4E6;
 }
 

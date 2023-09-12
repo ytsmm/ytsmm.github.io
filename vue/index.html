@@ -17,10 +17,9 @@
                         <search></search>
                     </div>
                     <div class="rightHeader">
-                        <img class="menuIcon" src="images/menu.png" alt="menu">
-                        <img class="userIcon" src="images/user.png" alt="user">
+                        <i class="userIcon fa-solid fa-user"></i>
                         <div class="cartIconWrap">
-                            <img class="cartIcon" src="images/cart.png" alt="cart"  @click="showCart = !showCart">
+                            <i class="cartIcon fa-solid fa-cart-shopping" @click="showCart = !showCart"></i>
                             <span class="cartIcon__span">{{itemsQuantity}}</span>
                             <cart 
                                 :cart-items="cartItems" 
@@ -45,6 +44,7 @@
         
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/MobileComp.js"></script>
     <script src="js/SearchComp.js"></script>
     <script src="js/CartComp.js"></script>
     <script src="js/BrandComp.js"></script>
